@@ -24,6 +24,8 @@ I am (almost exclusively) use `Build.scala`, because it exposes the full power (
 
 ## Getting into it
 
+### 0.0.2
+
 * Explore the difference between the configuration `Compile` and the task `compile`
 * Explore if and how the build settings will override project settings
     * e.g. if there is a setting for `ThisBuild` in configuration `Compile`, then how will that become visible in sub-projects?
@@ -34,3 +36,12 @@ I am (almost exclusively) use `Build.scala`, because it exposes the full power (
     > show sub-project2/compile:compile::hello-world
     > show sub-project1/*:compile::hello-world
     > show sub-project2/*:compile::hello-world
+
+### 0.0.3
+
+* Create a dependency between show-timer and show-timer-upper
+* And apply `.toUpperCase` to show-timer-upper
+
+### 0.0.4
+
+* ???

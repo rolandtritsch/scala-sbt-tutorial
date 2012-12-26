@@ -7,7 +7,8 @@ import sbt.KeyRanks._
 object Build extends sbt.Build {
   // custom settings, custom tasks, ...
   val helloWorld = SettingKey[String]("hello-world", "sets a hello world string", BSetting)
-  val showTime = TaskKey[Unit]("show-time", "shows the current time", BTask)
+  val showTime = TaskKey[String]("show-time", "shows the current time", BTask)
+  val showTimeUpper = TaskKey[String]("show-time-upper", "shows the current time (in uppercase)", BTask)
 
   // build level settings ...
   override lazy val settings = super.settings ++ Seq(
@@ -15,7 +16,9 @@ object Build extends sbt.Build {
     helloWorld in ThisBuild := "Hello Roland (Project: ThisBuild, Configuration: Global, Task: Global)",
     helloWorld in Compile := "Hello Roland (Project: Global, Configuration: Compile, Task: Global)",
 
-    showTime := println((new java.util.Date).toString),
+    showTime := {(new java.util.Date).toString},
+    showTimeUpper <<= showTime,
+    showTimeUpper ~= {_.toUpperCase},
 
     name := "scala-sbt-tutorial",
     organization := "org.tritsch.scala",
