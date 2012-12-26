@@ -15,7 +15,7 @@ object Build extends sbt.Build {
     helloWorld in ThisBuild := "Hello Roland (Project: ThisBuild, Configuration: Global, Task: Global)",
     helloWorld in Compile := "Hello Roland (Project: Global, Configuration: Compile, Task: Global)",
 
-    showTime := println(scala.compat.Platform.currentTime),
+    showTime := println((new java.util.Date).toString),
 
     name := "scala-sbt-tutorial",
     organization := "org.tritsch.scala",
