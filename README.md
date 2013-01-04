@@ -1,4 +1,4 @@
-# SBT playground
+# SBT Playground
 
 I am using this repo to document some of my experiments to understand SBT better.
 
@@ -44,4 +44,9 @@ I am (almost exclusively) use `Build.scala`, because it exposes the full power (
 
 ### 0.0.4
 
-* ???
+* Make sbt-assembly work
+* This shows a lot of good stuff, e.g. ...
+    * How to make one task depend on another (with `<<=`)
+	* The difference between compile, package and publish
+	* How to use Artifacts (for publishing something)
+* To make it work you can run `> sbt clean publish-local` and can then run the jar files from the commandline (they are self-contained): `> java -jar ./sub1/target/scala-2.9.2/sub-project1_2.9.2-0.0.1-assembly.jar` and `> java -jar ./sub2/target/scala-2.9.2/sub-project2_2.9.2-0.0.2-assembly.jar`
