@@ -15,10 +15,14 @@ I am (almost exclusively) use `Build.scala`, because it exposes the full power (
 
 * Just run `> sbt` to compile `./project/Build.scala`
 * At the prompt run ...
-     > inspect show-time
-	 > inspect hello-world
-	 > show show-time
-	 > show hell-world
+  
+  ```   
+  > inspect show-time
+  > inspect hello-world
+  > show show-time
+  > show hell-world
+  ```
+
 * Edit `Build.scala` to play around with the settings
 * Either restart sbt or run `> reload` to reload/recompile `Build.scala`
 
@@ -30,12 +34,15 @@ I am (almost exclusively) use `Build.scala`, because it exposes the full power (
 * Explore if and how the build settings will override project settings
     * e.g. if there is a setting for `ThisBuild` in configuration `Compile`, then how will that become visible in sub-projects?
 * Run `> inspect hello-world` and try to guess what the following commands will display
-	> show sub-project1/*:hello-world
-    > show sub-project1/compile:hello-world
-    > show sub-project1/compile:compile::hello-world
-    > show sub-project2/compile:compile::hello-world
-    > show sub-project1/*:compile::hello-world
-    > show sub-project2/*:compile::hello-world
+
+  ```
+  > show sub-project1/*:hello-world
+  > show sub-project1/compile:hello-world
+  > show sub-project1/compile:compile::hello-world
+  > show sub-project2/compile:compile::hello-world
+  > show sub-project1/*:compile::hello-world
+  > show sub-project2/*:compile::hello-world
+  ```
 
 ### 0.0.3
 
